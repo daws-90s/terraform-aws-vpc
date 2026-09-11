@@ -69,7 +69,7 @@ resource "aws_subnet" "database" {
 }
 
 resource "aws_db_subnet_group" "roboshop" {
-  name       = "main"
+  name       = "${local.common_name}"
   subnet_ids = aws_subnet.database[*].id
 
   tags = merge(
