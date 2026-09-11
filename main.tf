@@ -74,7 +74,9 @@ resource "aws_db_subnet_group" "roboshop" {
 
   tags = merge(
     local.common_tags,
-    Name = "${local.common_name}"
+    {
+      Name = "${local.common_name}"
+    }
   )
 }
 
